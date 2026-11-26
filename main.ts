@@ -1,0 +1,9 @@
+import { mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+
+const LINE =
+  "Exceeds Expectations: one vague prompt, zero follow-up, full credit claimed — recommend immediate promotion to co-author.";
+
+const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+mkdirSync(outDir, { recursive: true });
+writeFileSync(join(outDir, "entry.txt"), LINE, "utf8");
